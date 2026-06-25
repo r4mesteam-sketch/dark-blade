@@ -1,0 +1,26 @@
+{
+  "name": "dark-blade",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:api": "npm --prefix apps/api run start:dev",
+    "build:web": "npm --prefix apps/web run build",
+    "build:api": "npm --prefix apps/api run build",
+    "lint": "npm --prefix apps/web run lint && npm --prefix apps/api run lint",
+    "format": "prettier --write .",
+    "prisma:generate": "npm --prefix apps/api run prisma:generate",
+    "db:push": "npm --prefix apps/api run prisma:db:push"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1"
+  }
+}
